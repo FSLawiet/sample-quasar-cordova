@@ -8,6 +8,10 @@
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",
     "format": "prettier --write \"**/*.{js,ts,vue,css,html,md,json}\" --ignore-path .gitignore",
+    "dev": "quasar dev --modern",
+    "dev:android": "quasar dev -m cordova -T android",
+    "build": "quasar build --modern",
+    "build:android": "quasar build -m cordova -T android -- -- --packageType=apk",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
