@@ -24,6 +24,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            src-cordova/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+            /home/runner/work/sample-quasar-cordova/sample-quasar-cordova/src-cordova/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
           tag_name: v${{ steps.package-version.outputs.current-version}}
           draft: true
