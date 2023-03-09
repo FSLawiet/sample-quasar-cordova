@@ -17,9 +17,13 @@ jobs:
           npm i
       - name: Build Quasar
         run: quasar build -m cordova -T android -- -- --packageType=apk
+      - name: get-npm-version
+          id: package-version
+          uses: martinbeentjes/npm-get-version-action@main
       - name: Upload release
         uses: softprops/action-gh-release@v1
         with:
           files: |
             src-cordova/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk
+          tag_name: v${{ steps.package-version.outputs.current-version}}
           draft: true
