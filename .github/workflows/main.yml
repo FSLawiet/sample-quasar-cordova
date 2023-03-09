@@ -11,7 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup Quasar
-        run: npm i
+        run: |
+          npm i -g @quasar/cli
+          npm i
       - name: Build Quasar
         run: quasar build -m cordova -T android -- -- --packageType=apk
       - name: Upload release
